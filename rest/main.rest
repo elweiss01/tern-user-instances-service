@@ -4,3 +4,55 @@ OPTIONS http://localhost:1337
 ### Health Check
 GET http://localhost:1337/healthcheck 
 
+### Health Post Check
+POST http://localhost:1337/healthcheck 
+content-type: application/json
+
+{
+    "name": "sample",
+    "email": "elweiss01@gmail.com"
+} 
+
+### Get All Books
+GET http://localhost:1337/books/get/all
+
+### Get Book By Id
+GET http://localhost:1337/books/get/667b04e77780b6d8eafc2608
+
+### Create Book Fail
+POST http://localhost:1337/books/create
+Content-Type: application/json
+
+{
+    "name": "Dad Jokes",
+    "author": "Thomas Nowak"
+}
+
+### Create Book Pass
+POST http://localhost:1337/books/create
+Content-Type: application/json
+
+{
+    "title": "Dad Jokes",
+    "author": "Thomas Nowak"
+}
+
+### Update Book Pass
+PATCH http://localhost:1337/books/update/667b04e77780b6d8eafc2608
+Content-Type: application/json
+
+{
+    "title": "Dad Jokes",
+    "author": "Eric Weiss"
+}
+
+### Books Query
+POST http://localhost:1337/books/query
+Content-Type: application/json
+
+{
+    "title": "Dad Jokes"
+}
+
+### Delete Book Pass
+DELETE  http://localhost:1337/books/delete/667b04e77780b6d8eafc2608

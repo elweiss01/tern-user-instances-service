@@ -29,7 +29,11 @@ export function defineRoutes(controllers: any, application: Express) {
           if (handlers) {
             application[method](controllerPath + routeNames[k], handlers);
             logger.info(
-              "Loading Route:",
+              "Loading Route: " +
+                method.toString().toUpperCase() +
+                " " +
+                controllerPath +
+                routeNames[k],
               method,
               controllerPath + routeNames[k]
             );
