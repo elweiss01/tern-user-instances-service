@@ -23,7 +23,7 @@ export function MongoCreate(model: Model<any>) {
 
         await document.save();
 
-        req.mongoCreate = document;
+        req.mongoCreate = document._id;
       } catch (error) {
         logger.error(error);
         return res.status(500).json({ error });

@@ -18,7 +18,6 @@ export function Validate(schema: Joi.ObjectSchema) {
       try {
         await schema.validateAsync(req.body);
       } catch (error) {
-        logger.error(error);
         return res.status(422).json(error);
       }
 

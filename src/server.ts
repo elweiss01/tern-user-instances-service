@@ -10,7 +10,7 @@ import mongoose, { mongo } from "mongoose";
 import { defineRoutes } from "./modules/routes";
 import MainController from "./controller/main";
 import { declareHandler } from "./middleware/declareHandler";
-import BooksController from "./controller/books";
+import UsersController from "./controller/users";
 
 export const application = express();
 export let httpServer: ReturnType<typeof http.createServer>;
@@ -49,7 +49,7 @@ export const Main = async () => {
   logger.info("---------------------------------------------");
   logger.info("Healthcheck");
   logger.info("---------------------------------------------");
-  defineRoutes([MainController, BooksController], application);
+  defineRoutes([MainController, UsersController], application);
 
   logger.info("---------------------------------------------");
   logger.info("Define Controller Routing");

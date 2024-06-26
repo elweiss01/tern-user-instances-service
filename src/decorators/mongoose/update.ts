@@ -28,6 +28,7 @@ export function MongoUpdate(model: Model<any>) {
 
         req.mongoUpdate = document;
       } catch (error) {
+        console.log(error);
         logger.error(error);
         return res.status(500).json({ error });
       }

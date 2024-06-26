@@ -13,46 +13,46 @@ content-type: application/json
     "email": "elweiss01@gmail.com"
 } 
 
-### Get All Books
-GET http://localhost:1337/books/get/all
 
-### Get Book By Id
-GET http://localhost:1337/books/get/667b04e77780b6d8eafc2608
-
-### Create Book Fail
-POST http://localhost:1337/books/create
+### Create User Pass
+POST http://localhost:1337/users/create
 Content-Type: application/json
 
 {
-    "name": "Dad Jokes",
-    "author": "Thomas Nowak"
+    "email": "elweiss05@gmail.com",
+    "password": "Alphabeta!!11",
+    "role": ["admin"]
 }
 
-### Create Book Pass
-POST http://localhost:1337/books/create
+### Create User Fail
+POST http://localhost:1337/users/create
 Content-Type: application/json
 
 {
-    "title": "Dad Jokes",
-    "author": "Thomas Nowak"
+    "email": "elweiss05",
+    "role": ["admin"]
 }
 
-### Update Book Pass
-PATCH http://localhost:1337/books/update/667b04e77780b6d8eafc2608
+
+### Get User By Id
+GET http://localhost:1337/users/get/667c31cbc3c1cebc2082a89a
+
+### Delete User By Id
+DELETE http://localhost:1337/users/delete/667c31cbc3c1cebc2082a89a
+
+### Users Query
+POST http://localhost:1337/users/query
 Content-Type: application/json
 
 {
-    "title": "Dad Jokes",
-    "author": "Eric Weiss"
+    "email": "elweiss05@gmail.com"
 }
 
-### Books Query
-POST http://localhost:1337/books/query
+### Update User Pass
+PATCH http://localhost:1337/users/update/667c31cbc3c1cebc2082a89a
 Content-Type: application/json
 
 {
-    "title": "Dad Jokes"
-}
 
-### Delete Book Pass
-DELETE  http://localhost:1337/books/delete/667b04e77780b6d8eafc2608
+    "role": ["user"]
+}
