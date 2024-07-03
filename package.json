@@ -4,7 +4,7 @@
   "description": "This service manages all the user credentials for all the product instances",
   "main": "src/server.ts",
   "scripts": {
-    "test": "jest --config jest.config.ts --coverage",
+    "test": "jest --config jest.config.ts --detectOpenHandles --coverage --maxWorkers=1",
     "build": "rm -rf build/ && tsc -p tsconfig.build.json"
   },
   "repository": {
