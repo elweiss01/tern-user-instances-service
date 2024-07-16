@@ -19,8 +19,7 @@ POST http://localhost:1337/users/create
 Content-Type: application/json
 
 {
-    "email": "elweiss05@gmail.com",
-    "password": "Alphabeta!!11",
+    "email": "elweiss07@gmail.com",
     "role": ["admin"]
 }
 
@@ -29,7 +28,7 @@ POST http://localhost:1337/users/create
 Content-Type: application/json
 
 {
-    "email": "elweiss05",
+    "email": "elweiss07",
     "role": ["admin"]
 }
 

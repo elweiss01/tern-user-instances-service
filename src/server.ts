@@ -33,6 +33,11 @@ export const Main = async () => {
   application.use(corsHandler);
   application.use(declareHandler);
 
+  logger.info('---------------------------------------------');
+  logger.info('Healthcheck');
+  logger.info('---------------------------------------------');
+  defineRoutes([MainController, UsersController], application);
+
   try {
     const connection = await mongoose.connect(
       MONGO.MONGO_CONNECTION,
@@ -47,11 +52,6 @@ export const Main = async () => {
     logger.error(error);
     logger.info('---------------------------------------------');
   }
-
-  logger.info('---------------------------------------------');
-  logger.info('Healthcheck');
-  logger.info('---------------------------------------------');
-  defineRoutes([MainController, UsersController], application);
 
   logger.info('---------------------------------------------');
   logger.info('Define Controller Routing');
