@@ -1,0 +1,23 @@
+version: '3'
+services:
+  palladium:
+    image: tern-user-intsances-service
+    build: ./
+    volumes:
+      - node_modules:/node_modules
+    environment:
+      - MONGOCONN=mongodb://mongo:27017/Palladium
+    ports:
+      - 1337:1337
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+      - mongodb:/data/configdb
+volumes:
+  mongodb:
+  node_modules:

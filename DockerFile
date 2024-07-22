@@ -1,0 +1,17 @@
+#palladium/DockerFile
+
+FROM node:14
+
+USER root
+
+WORKDIR /tern-user-instances-service/
+
+COPY package*.json .npmrc ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 1337
+
+CMD ["nodemon" ]
